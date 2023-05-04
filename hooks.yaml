@@ -1,0 +1,8 @@
+-   id: kustomize
+    name: kustomize (via docker)
+    description: kustomize
+    entry: kustomize build
+    language: docker
+    args: [deploy/kustomize/overlay/dev]
+    always_run: true
+    pass_filenames: false
