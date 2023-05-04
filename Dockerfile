@@ -33,7 +33,8 @@ ARG PKG_NAME=ksops
 # Copy the plugin to kustomize plugin path
 COPY --from=ksops-builder /go/src/github.com/viaduct-ai/kustomize-sops/ksops  $KUSTOMIZE_PLUGIN_PATH/viaduct.ai/v1/${PKG_NAME}/
 
-RUN chmod -R 755 $KUSTOMIZE_PLUGIN_PATH/viaduct.ai/v1/${PKG_NAME}/ksops
+RUN chmod 755 $KUSTOMIZE_PLUGIN_PATH/viaduct.ai/v1/${PKG_NAME}/ksops \
+  && chown kustomize:kustomize $KUSTOMIZE_PLUGIN_PATH/viaduct.ai/v1/${PKG_NAME}/ksops ;
 
 USER kustomize
 WORKDIR /src
