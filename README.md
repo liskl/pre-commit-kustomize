@@ -14,7 +14,7 @@ repos:
     args: [--allow-multiple-documents]
   - id: check-added-large-files
 - repo: https://github.com/liskl/pre-commit-kustomize
-  rev: main
+  rev: v0.0.7
   hooks:
   - id: kustomize
     name: kustomize-dev
